@@ -180,7 +180,7 @@ export const registerWorker = async (runtime) => {
     throw new Error('Worker is assigned to other pool!')
   }
 
-  let shouldRegister = !info.registered
+  let shouldRegister = info.registered
 
   const workerInfo = (
     await phalaApi.query.phalaRegistry.workers(publicKey)
