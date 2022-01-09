@@ -110,8 +110,8 @@ const onPreMining = async (fromState, toState, context) => {
       (await phalaApi.query.phalaRegistry.workers(publicKey))
         .unwrapOrDefault()
         .initialScore.toJSON() > 50
-    ) ||
-    !info.registered
+    ) //||
+    //!info.registered
   ) {
     context.stateMachine.rootStateMachine.workerContext.message =
       'Ensuring registration on chain...'
